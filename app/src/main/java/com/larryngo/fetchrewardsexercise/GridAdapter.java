@@ -55,7 +55,7 @@ public class GridAdapter extends BaseAdapter {
 
         //setting the texts for each column
         if(position >= 1) { //prevent accessing unknown in the array
-            if(list_objects.get(position).getListId() == list_objects.get(position-1).getListId()) {
+            if(list_objects.get(position).getListId() == list_objects.get(position-1).getListId()) { //checks to see if a listid already exists with the same value
                 tv_listID.setText(""); //no text
             } else {
                 tv_listID.setText(String.valueOf(list_objects.get(position).getListId())); //sets the listid
