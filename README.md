@@ -13,3 +13,4 @@ The application starts with a basic list containing data from the JSON file in t
 ## Screenshots
 
 ![](https://github.com/larryngo97/FetchRewardsExercise/blob/master/demo/screen1.PNG?raw=true) 
+![](https://github.com/larryngo97/FetchRewardsExercise/blob/master/demo/screen2.PNG?raw=true) 
