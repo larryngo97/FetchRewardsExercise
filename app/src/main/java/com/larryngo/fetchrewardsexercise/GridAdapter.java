@@ -49,6 +49,7 @@ public class GridAdapter extends BaseAdapter {
         }
 
         //Getting the texts for the necessary columns
+        View view_divider = view.findViewById(R.id.fetch_divider);
         TextView tv_listID = view.findViewById(R.id.fetch_listid);
         TextView tv_ID = view.findViewById(R.id.fetch_id);
         TextView tv_name = view.findViewById(R.id.fetch_name);
@@ -56,11 +57,14 @@ public class GridAdapter extends BaseAdapter {
         //setting the texts for each column
         if(position >= 1) { //prevent accessing unknown in the array
             if(list_objects.get(position).getListId() == list_objects.get(position-1).getListId()) { //checks to see if a listid already exists with the same value
+                view_divider.setVisibility(View.INVISIBLE); // no divider so it is properly grouped
                 tv_listID.setText(""); //no text
             } else {
+                view_divider.setVisibility(View.VISIBLE);
                 tv_listID.setText(String.valueOf(list_objects.get(position).getListId())); //sets the listid
             }
         } else {
+            view_divider.setVisibility(View.VISIBLE);
             tv_listID.setText(String.valueOf(list_objects.get(position).getListId())); //sets the listid for the first entry ( 1 )
         }
 
