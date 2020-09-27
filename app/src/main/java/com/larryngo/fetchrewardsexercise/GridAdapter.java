@@ -54,7 +54,16 @@ public class GridAdapter extends BaseAdapter {
         TextView tv_name = view.findViewById(R.id.fetch_name);
 
         //setting the texts for each column
-        tv_listID.setText(String.valueOf(list_objects.get(position).getListId()));
+        if(position >= 1) { //prevent accessing unknown in the array
+            if(list_objects.get(position).getListId() == list_objects.get(position-1).getListId()) {
+                tv_listID.setText(""); //no text
+            } else {
+                tv_listID.setText(String.valueOf(list_objects.get(position).getListId())); //sets the listid
+            }
+        } else {
+            tv_listID.setText(String.valueOf(list_objects.get(position).getListId())); //sets the listid for the first entry ( 1 )
+        }
+
         tv_ID.setText(String.valueOf(list_objects.get(position).getId()));
         tv_name.setText(list_objects.get(position).getName());
 

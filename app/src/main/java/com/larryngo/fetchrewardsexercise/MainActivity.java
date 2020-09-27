@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(Call<List<FetchObject>> call, Response<List<FetchObject>> response) {
                         if(response.isSuccessful()) {
                             responseList = response.body(); //gets the entire array of objects
+
                             List<FetchObject> fetchList = new ArrayList<>(); //this will be the list of real objects, which filters out the objects without names
 
                             for(FetchObject obj : responseList) { //goes through all the objects in the json file
